@@ -1,10 +1,8 @@
 name: Output information
-on: 
-  issues:
-    types: [opened, edited, closed]
+on: issues
 jobs:
   info:
     runs-on: ubuntu-latest
     steps:
       - name: Output GitHub context
-        run: echo "${{ toJSON(github.event.issue) }}" # get info của github ra dạng JSON
+        run: echo "${{ toJSON(github.event) }}" # get info của github ra dạng JSON
